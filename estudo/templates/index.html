@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudo Flask - Camp Code</title>
-</head>
+{% extends 'base.html' %}
+
+{% block content %}
 <body>
     <div>
         <h3>Estudo Flask</h3>
         <h5>@campcodebrasil</h5>
     </div>
 
+    {% include 'nav.html' %}
+
     <div>
-        <p>Bem vindos a aula de flask!!</p>
+        <p>Bem vindo {{context.usuario}} a aula de flask!!</p>
+        <p>Idade: {{context.idade}}</p>
+
+        <img src="{{ url_for('static', filename='img/caveira.png')}}">
+        
     </div>
-    
-</body>
-</html>
+{% endblock %}
